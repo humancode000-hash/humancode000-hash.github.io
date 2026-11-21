@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HumanCode — Проект и услуги</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background: #0d1117; color: #f0f6fc; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+    header { padding: 20px 0; border-bottom: 1px solid #30363d; }
+    .nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 20px; font-weight: 700; color: #58a6ff; text-decoration: none; }
+    .hero { padding: 72px 0 56px; text-align: center; }
+    .hero h1 { font-size: 40px; line-height: 1.2; margin-bottom: 16px; }
+    .hero p { font-size: 18px; color: #8b949e; max-width: 640px; margin: 0 auto 28px; }
+    .btn { display: inline-block; background: #238636; color: #fff; padding: 14px 26px; border-radius: 6px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; font-size: 16px; }
+    .btn:hover { background: #2ea043; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; padding: 24px 0 64px; }
+    .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 24px; }
+    .card h2 { font-size: 18px; margin-bottom: 10px; color: #f0f6fc; }
+    .card p { font-size: 15px; color: #8b949e; }
+    .cta-box { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 32px; margin-bottom: 64px; }
+    .cta-box h2 { font-size: 24px; margin-bottom: 10px; }
+    .cta-box p { color: #8b949e; margin-bottom: 20px; }
+    form { display: flex; flex-direction: column; gap: 12px; max-width: 480px; }
+    input, textarea { background: #0d1117; border: 1px solid #30363d; color: #f0f6fc; padding: 12px; border-radius: 6px; font-size: 15px; }
+    footer { border-top: 1px solid #30363d; padding: 24px 0; text-align: center; color: #8b949e; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">HumanCode</a>
+      <a href="#order" class="btn" style="padding: 9px 18px; font-size: 14px;">Оставить заявку</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Рабочий сайт для привлечения клиентов и заявок</h1>
+      <p>Запускаем проект на GitHub Pages, упаковываем предложение и настраиваем приём обращений без лишних расходов на хостинг.</p>
+      <a href="#order" class="btn">Обсудить задачу</a>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Чёткий оффер</h2>
+        <p>Сразу показываем клиенту, какую проблему решаем, в чём выгода и как сделать первый шаг.</p>
+      </div>
+      <div class="card">
+        <h2>Быстрый запуск</h2>
+        <p>Публикация в один клик через ветку main — сайт открывается по прямой ссылке без задержек.</p>
+      </div>
+      <div class="card">
+        <h2>Приём заявок</h2>
+        <p>Форма обратной связи или прямая ссылка на мессенджер, чтобы не терять входящий трафик.</p>
+      </div>
+    </section>
+
+    <section id="order" class="cta-box">
+      <h2>Заявка на работу или сотрудничество</h2>
+      <p>Напишите контакт и коротко опишите задачу — подключим сюда реальную отправку в Telegram, WhatsApp или форму.</p>
+      <form onsubmit="event.preventDefault(); alert('Форма готова к подключению Telegram/формы. Укажите свой контакт в коде.');">
+        <input type="text" placeholder="Ваше имя или @username" required>
+        <input type="text" placeholder="Телефон или Telegram" required>
+        <textarea rows="3" placeholder="Что нужно сделать или купить?" required></textarea>
+        <button type="submit" class="btn">Отправить</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 humancode000-hash</div>
+  </footer>
+</body>
+</html>
