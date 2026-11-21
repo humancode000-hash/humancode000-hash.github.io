@@ -3,75 +3,187 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HumanCode — Проект и услуги</title>
+  <title>HumanCode — Реализация заказов селлеров после оплаты</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background: #0d1117; color: #f0f6fc; line-height: 1.6; }
-    .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
-    header { padding: 20px 0; border-bottom: 1px solid #30363d; }
-    .nav { display: flex; justify-content: space-between; align-items: center; }
+    .container { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+    header { padding: 18px 0; border-bottom: 1px solid #30363d; position: sticky; top: 0; background: rgba(13, 17, 23, 0.95); backdrop-filter: blur(6px); z-index: 10; }
+    .nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
     .logo { font-size: 20px; font-weight: 700; color: #58a6ff; text-decoration: none; }
-    .hero { padding: 72px 0 56px; text-align: center; }
-    .hero h1 { font-size: 40px; line-height: 1.2; margin-bottom: 16px; }
-    .hero p { font-size: 18px; color: #8b949e; max-width: 640px; margin: 0 auto 28px; }
-    .btn { display: inline-block; background: #238636; color: #fff; padding: 14px 26px; border-radius: 6px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; font-size: 16px; }
+    .nav-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn { display: inline-block; background: #238636; color: #fff; padding: 12px 22px; border-radius: 6px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; font-size: 15px; transition: 0.2s; }
     .btn:hover { background: #2ea043; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; padding: 24px 0 64px; }
+    .btn-sm { padding: 8px 16px; font-size: 14px; }
+    .btn-outline { background: transparent; border: 1px solid #30363d; color: #f0f6fc; }
+    .btn-outline:hover { border-color: #8b949e; background: #161b22; }
+    .hero { padding: 64px 0 44px; text-align: center; }
+    .badge { display: inline-block; background: rgba(88, 166, 255, 0.12); color: #58a6ff; border: 1px solid rgba(88, 166, 255, 0.3); padding: 4px 12px; border-radius: 999px; font-size: 13px; margin-bottom: 16px; }
+    .hero h1 { font-size: 38px; line-height: 1.2; margin-bottom: 16px; }
+    .hero p { font-size: 18px; color: #8b949e; max-width: 720px; margin: 0 auto 28px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px; padding: 20px 0 56px; }
     .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 24px; }
     .card h2 { font-size: 18px; margin-bottom: 10px; color: #f0f6fc; }
     .card p { font-size: 15px; color: #8b949e; }
-    .cta-box { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 32px; margin-bottom: 64px; }
+    .cta-box { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 32px; margin-bottom: 56px; }
     .cta-box h2 { font-size: 24px; margin-bottom: 10px; }
     .cta-box p { color: #8b949e; margin-bottom: 20px; }
-    form { display: flex; flex-direction: column; gap: 12px; max-width: 480px; }
-    input, textarea { background: #0d1117; border: 1px solid #30363d; color: #f0f6fc; padding: 12px; border-radius: 6px; font-size: 15px; }
+    form { display: flex; flex-direction: column; gap: 12px; max-width: 560px; }
+    input, select, textarea { background: #0d1117; border: 1px solid #30363d; color: #f0f6fc; padding: 12px; border-radius: 6px; font-size: 15px; width: 100%; }
+    .form-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px; align-items: center; }
+    .status-note { font-size: 13px; color: #7ee787; margin-top: 12px; min-height: 20px; }
     footer { border-top: 1px solid #30363d; padding: 24px 0; text-align: center; color: #8b949e; font-size: 14px; }
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
-      <a href="#" class="logo">HumanCode</a>
-      <a href="#order" class="btn" style="padding: 9px 18px; font-size: 14px;">Оставить заявку</a>
+      <a href="#" class="logo">HumanCode · Sellers</a>
+      <div class="nav-actions">
+        <a id="top-wa" href="https://wa.me/77000338978" target="_blank" class="btn btn-sm btn-outline">WhatsApp</a>
+        <a href="#order" class="btn btn-sm">Передать заказ</a>
+      </div>
     </div>
   </header>
 
   <main class="container">
     <section class="hero">
-      <h1>Рабочий сайт для привлечения клиентов и заявок</h1>
-      <p>Запускаем проект на GitHub Pages, упаковываем предложение и настраиваем приём обращений без лишних расходов на хостинг.</p>
-      <a href="#order" class="btn">Обсудить задачу</a>
+      <div class="badge">Маркетплейсы · После оплаты</div>
+      <h1>Реализация заказов селлеров после оплаты</h1>
+      <p>Принимаем оплаченные заказы селлеров маркетплейсов и передаём их в WhatsApp и локальному Джарвису для реализации без потери данных.</p>
+      <div class="nav-actions" style="justify-content: center;">
+        <a href="#order" class="btn">Запустить реализацию</a>
+        <a href="#order" class="btn btn-outline">Карточка для Джарвиса</a>
+      </div>
     </section>
 
     <section class="grid">
       <div class="card">
-        <h2>Чёткий оффер</h2>
-        <p>Сразу показываем клиенту, какую проблему решаем, в чём выгода и как сделать первый шаг.</p>
+        <h2>Старт после оплаты</h2>
+        <p>Запускаем реализацию только после оплаты — фиксируем магазин, заказ, сумму и детали отработки.</p>
       </div>
       <div class="card">
-        <h2>Быстрый запуск</h2>
-        <p>Публикация в один клик через ветку main — сайт открывается по прямой ссылке без задержек.</p>
+        <h2>Маршрут в WhatsApp</h2>
+        <p>Сразу открываем WhatsApp на 77000338978 с готовым сообщением по оплаченному заказу селлера.</p>
       </div>
       <div class="card">
-        <h2>Приём заявок</h2>
-        <p>Форма обратной связи или прямая ссылка на мессенджер, чтобы не терять входящий трафик.</p>
+        <h2>Подготовка для локального Джарвиса</h2>
+        <p>Автоматически копируем текст в буфер обмена и сохраняем файл заявки для быстрой передачи локальному Джарвису.</p>
       </div>
     </section>
 
     <section id="order" class="cta-box">
-      <h2>Заявка на работу или сотрудничество</h2>
-      <p>Напишите контакт и коротко опишите задачу — подключим сюда реальную отправку в Telegram, WhatsApp или форму.</p>
-      <form onsubmit="event.preventDefault(); alert('Форма готова к подключению Telegram/формы. Укажите свой контакт в коде.');">
-        <input type="text" placeholder="Ваше имя или @username" required>
-        <input type="text" placeholder="Телефон или Telegram" required>
-        <textarea rows="3" placeholder="Что нужно сделать или купить?" required></textarea>
-        <button type="submit" class="btn">Отправить</button>
+      <h2>Карточка оплаченного заказа селлера</h2>
+      <p>Заполните данные заказа — текст скопируется в буфер обмена, сохранится в файл для Джарвиса и отправится по выбранному маршруту.</p>
+      <form id="seller-form">
+        <input type="text" id="seller-name" placeholder="Селлер / название магазина / контакт" required>
+        <input type="text" id="mp-order" placeholder="Маркетплейс и номер заказа (например, Kaspi / WB №...)" required>
+        <input type="text" id="paid-amount" placeholder="Сумма и статус оплаты (например, оплачено)" required>
+        <select id="route-target">
+          <option value="both">Маршрут: WhatsApp + локальный Джарвис</option>
+          <option value="whatsapp">Маршрут: только WhatsApp</option>
+          <option value="jarvis">Маршрут: только локальный Джарвис</option>
+        </select>
+        <textarea id="order-details" rows="3" placeholder="Товары, количество, адрес/логистика, особые условия реализации..." required></textarea>
+        <div class="form-buttons">
+          <button type="submit" class="btn">Отправить по маршруту</button>
+          <button type="button" id="copy-only-btn" class="btn btn-outline">Копировать для Джарвиса</button>
+          <button type="button" id="download-txt-btn" class="btn btn-outline">Скачать .txt для Джарвиса</button>
+        </div>
+        <div id="route-status" class="status-note"></div>
       </form>
     </section>
   </main>
 
   <footer>
-    <div class="container">© 2026 humancode000-hash</div>
+    <div class="container">© 2026 humancode000-hash · Реализация заказов селлеров</div>
   </footer>
+
+  <script>
+    const WHATSAPP_PHONE = "77000338978";
+
+    function buildOrderText() {
+      const seller = document.getElementById("seller-name").value.trim() || "—";
+      const orderId = document.getElementById("mp-order").value.trim() || "—";
+      const paid = document.getElementById("paid-amount").value.trim() || "—";
+      const details = document.getElementById("order-details").value.trim() || "—";
+      const timestamp = new Date().toLocaleString("ru-RU");
+
+      return (
+        `ЗАКАЗ СЕЛЛЕРА (ПОСЛЕ ОПЛАТЫ)\n` +
+        `Время: ${timestamp}\n` +
+        `Селлер/контакт: ${seller}\n` +
+        `Маркетплейс и заказ: ${orderId}\n` +
+        `Оплата: ${paid}\n` +
+        `Детали реализации: ${details}`
+      );
+    }
+
+    function copyText(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text).catch(() => fallbackCopy(text));
+      }
+      fallbackCopy(text);
+      return Promise.resolve();
+    }
+
+    function fallbackCopy(text) {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (_) {}
+      document.body.removeChild(ta);
+    }
+
+    function downloadOrderFile(text) {
+      const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "order-jarvis.txt";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    document.getElementById("copy-only-btn").addEventListener("click", function() {
+      const text = buildOrderText();
+      copyText(text);
+      document.getElementById("route-status").textContent =
+        "Карточка заказа скопирована в буфер обмена — вставьте её (Ctrl+V / Cmd+V) локальному Джарвису.";
+    });
+
+    document.getElementById("download-txt-btn").addEventListener("click", function() {
+      const text = buildOrderText();
+      copyText(text);
+      downloadOrderFile(text);
+      document.getElementById("route-status").textContent =
+        "Файл order-jarvis.txt сохранён и текст скопирован в буфер обмена для локального Джарвиса.";
+    });
+
+    document.getElementById("seller-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const target = document.getElementById("route-target").value;
+      const statusEl = document.getElementById("route-status");
+      const plainText = buildOrderText();
+      const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(plainText)}`;
+
+      copyText(plainText);
+
+      if (target === "whatsapp") {
+        window.open(waUrl, "_blank");
+        statusEl.textContent = "Открыт WhatsApp (77000338978) с карточкой заказа. Текст также скопирован в буфер обмена.";
+      } else if (target === "jarvis") {
+        downloadOrderFile(plainText);
+        statusEl.textContent = "Текст скопирован в буфер обмена и сохранён файл order-jarvis.txt для локального Джарвиса.";
+      } else {
+        downloadOrderFile(plainText);
+        window.open(waUrl, "_blank");
+        statusEl.textContent = "Открыт WhatsApp (77000338978), текст скопирован в буфер и сохранён order-jarvis.txt для Джарвиса.";
+      }
+    });
+  </script>
 </body>
 </html>
