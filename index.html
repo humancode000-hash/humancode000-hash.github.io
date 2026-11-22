@@ -363,4 +363,349 @@
     });
   </script>
 </body>
+</html> -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 18px 64px;
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 16px;
+      font-size: 0.95rem;
+    }
+    nav a:hover { color: var(--text); }
+    .hero {
+      padding: 32px 0 20px;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(34, 197, 94, 0.14);
+      color: #86efac;
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      line-height: 1.18;
+    }
+    .lead {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 740px;
+      margin: 0 0 20px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin: 20px 0 28px;
+    }
+    .box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .box h3 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+    }
+    .box p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+    .offer-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.14), rgba(19, 26, 38, 0.95));
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 28px;
+    }
+    .price {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #86efac;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #06110a;
+      font-weight: 700;
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .btn:hover { background: var(--accent-hover); color: #fff; }
+    .btn-secondary {
+      background: var(--card-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { background: #222e42; color: #fff; }
+    form {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      display: grid;
+      gap: 14px;
+    }
+    label {
+      display: grid;
+      gap: 6px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 11px 13px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.96rem;
+      font-family: inherit;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .status {
+      margin-top: 10px;
+      font-size: 0.92rem;
+      color: #86efac;
+      min-height: 22px;
+    }
+    footer {
+      margin-top: 44px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.88rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#top">AI CONTENT LAB</a>
+      <nav>
+        <a href="#package">Что входит</a>
+        <a href="#order">Оформить заказ</a>
+        <a href="https://wa.me/77000338978" target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="badge">AI CONTENT LAB · Маркетплейсы Kaspi / Ozon / Wildberries</div>
+      <h1>Продающие карточки товаров и сценарии Reels/Shorts под ключ после оплаты</h1>
+      <p class="lead">
+        Помогаем селлерам быстрее выводить товары в топ и повышать конверсию в заказ:
+        собираем сильные заголовки, УТП, характеристики, описание, структуру слайдов и сценарии
+        коротких вертикальных роликов без воды и лишних задержек.
+      </p>
+
+      <div class="offer-bar">
+        <div>
+          <div><strong>Пакет «Карточка + 3 Reels / Shorts»</strong></div>
+          <div style="color: var(--muted); font-size: 0.92rem;">
+            Заголовки · УТП · Характеристики · Описание · 6 слайдов · 3 сценария видео
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+          <div class="price">от 25 000 ₸</div>
+          <a class="btn" href="#order">Передать заказ</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="package" class="grid-3">
+      <div class="box">
+        <h3>1. Карточка товара под маркетплейс</h3>
+        <p>Цепляющие заголовки, понятные УТП, точные характеристики и продающее описание под требования площадки и покупателя.</p>
+      </div>
+      <div class="box">
+        <h3>2. Структура слайдов и Reels/Shorts</h3>
+        <p>Понятная логика слайдов и 3 сценария коротких видео (хук 0–3 сек, текст речи, текст на экране и раскадровка).</p>
+      </div>
+      <div class="box">
+        <h3>3. Моментальный маршрут в работу</h3>
+        <p>Заявка сразу уходит в WhatsApp, копируется в буфер и сохраняется в файл <code>order-jarvis.txt</code> для автоматизации.</p>
+      </div>
+    </section>
+
+    <section id="order">
+      <h2 style="margin: 0 0 8px;">Карточка оплаченного заказа селлера</h2>
+      <p style="margin: 0 0 16px; color: var(--muted);">
+        Заполните данные заказа — текст скопируется в буфер обмена, сохранится в файл для Джарвиса и отправится по выбранному маршруту.
+      </p>
+
+      <form id="orderForm">
+        <label>
+          Селлер / магазин / контакт
+          <input id="seller" type="text" placeholder="Данияр / Магазин «NordHome» / +7 707 412 88 90" required />
+        </label>
+
+        <label>
+          Маркетплейс и товар (полное наименование, модель, объём/размеры)
+          <input id="product" type="text" placeholder="Kaspi Магазин · Термос из нержавеющей стали «NordTherm 1000» (NT-1L-BLK), 1,0 л" required />
+        </label>
+
+        <label>
+          Оплата и статус
+          <input id="payment" type="text" value="25 000 ₸ · Оплачено полностью" required />
+        </label>
+
+        <label>
+          Маршрут передачи заказа
+          <select id="route">
+            <option value="WhatsApp + локальный Джарвис">Маршрут: WhatsApp + локальный Джарвис</option>
+            <option value="только WhatsApp">Маршрут: только WhatsApp</option>
+            <option value="только локальный Джарвис">Маршрут: только локальный Джарвис</option>
+          </select>
+        </label>
+
+        <label>
+          Характеристики, комплектация, гарантии и задача на реализацию
+          <textarea id="details" placeholder="Бренд, материал, размеры, вес, цвет, комплектация, гарантия, наличие фото/видео исходников и задача (карточка + слайды + 3 Reels/Shorts)..." required></textarea>
+        </label>
+
+        <div class="actions">
+          <button type="submit" class="btn">Отправить по маршруту</button>
+          <button type="button" id="copyBtn" class="btn btn-secondary">Копировать для Джарвиса</button>
+          <button type="button" id="downloadBtn" class="btn btn-secondary">Скачать .txt для Джарвиса</button>
+        </div>
+        <div id="status" class="status"></div>
+      </form>
+    </section>
+
+    <footer>
+      <div>© 2026 AI CONTENT LAB · Контент и автоматизация для селлеров</div>
+      <div>WhatsApp: +7 700 033 89 78</div>
+    </footer>
+  </div>
+
+  <script>
+    const WHATSAPP_PHONE = "77000338978";
+
+    function buildOrderText() {
+      const now = new Date().toLocaleString("ru-RU");
+      const seller = document.getElementById("seller").value.trim();
+      const product = document.getElementById("product").value.trim();
+      const payment = document.getElementById("payment").value.trim();
+      const route = document.getElementById("route").value;
+      const details = document.getElementById("details").value.trim();
+
+      return [
+        "AI CONTENT LAB — ЗАКАЗ КОНТЕНТА (ПОСЛЕ ОПЛАТЫ)",
+        "Время: " + now,
+        "Маршрут: " + route,
+        "Селлер/контакт: " + seller,
+        "Маркетплейс и товар: " + product,
+        "Оплата: " + payment,
+        "Детали реализации: " + details
+      ].join("\n");
+    }
+
+    function saveTxtFile(text) {
+      const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "order-jarvis.txt";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch (_) {
+        return false;
+      }
+    }
+
+    document.getElementById("copyBtn").addEventListener("click", async () => {
+      const text = buildOrderText();
+      const ok = await copyText(text);
+      document.getElementById("status").textContent = ok
+        ? "Текст заказа скопирован в буфер обмена для Джарвиса."
+        : "Не удалось скопировать автоматически — выделите поля вручную.";
+    });
+
+    document.getElementById("downloadBtn").addEventListener("click", () => {
+      const text = buildOrderText();
+      saveTxtFile(text);
+      document.getElementById("status").textContent = "Файл order-jarvis.txt сохранён.";
+    });
+
+    document.getElementById("orderForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const text = buildOrderText();
+      const route = document.getElementById("route").value;
+      const copied = await copyText(text);
+
+      if (route.includes("Джарвис")) {
+        saveTxtFile(text);
+      }
+
+      if (route.includes("WhatsApp")) {
+        const waUrl = "https://api.whatsapp.com/send/?phone=" + WHATSAPP_PHONE + "&text=" + encodeURIComponent(text);
+        window.open(waUrl, "_blank", "noopener");
+      }
+
+      const parts = [];
+      if (route.includes("WhatsApp")) parts.push("открыт WhatsApp (" + WHATSAPP_PHONE + ")");
+      if (copied) parts.push("текст скопирован в буфер");
+      if (route.includes("Джарвис")) parts.push("сохранён order-jarvis.txt");
+
+      document.getElementById("status").textContent = "Готово: " + (parts.join(", ") || "заказ сформирован") + ".";
+    });
+  </script>
+</body>
 </html>
