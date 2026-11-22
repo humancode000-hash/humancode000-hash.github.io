@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HumanCode — Реализация заказов селлеров после оплаты</title>
+  <title>AI Content Lab — Карточки товаров, Reels и Shorts после оплаты</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background: #0d1117; color: #f0f6fc; line-height: 1.6; }
@@ -38,53 +38,58 @@
 <body>
   <header>
     <div class="container nav">
-      <a href="#" class="logo">HumanCode · Sellers</a>
+      <a href="#" class="logo">AI Content Lab</a>
       <div class="nav-actions">
         <a id="top-wa" href="https://wa.me/77000338978" target="_blank" class="btn btn-sm btn-outline">WhatsApp</a>
-        <a href="#order" class="btn btn-sm">Передать заказ</a>
+        <a href="#order" class="btn btn-sm">Передать задачу</a>
       </div>
     </div>
   </header>
 
   <main class="container">
     <section class="hero">
-      <div class="badge">Маркетплейсы · После оплаты</div>
-      <h1>Реализация заказов селлеров после оплаты</h1>
-      <p>Принимаем оплаченные заказы селлеров маркетплейсов и передаём их в WhatsApp и локальному Джарвису для реализации без потери данных.</p>
+      <div class="badge">AI Content Lab · Контент для селлеров после оплаты</div>
+      <h1>Карточки товаров, Reels и Shorts для селлеров после оплаты</h1>
+      <p>Принимаем оплаченные заказы селлеров на карточки маркетплейсов, Reels и Shorts — фиксируем ТЗ, открываем WhatsApp и готовим пакет для локального Джарвиса.</p>
       <div class="nav-actions" style="justify-content: center;">
-        <a href="#order" class="btn">Запустить реализацию</a>
-        <a href="#order" class="btn btn-outline">Карточка для Джарвиса</a>
+        <a href="#order" class="btn">Запустить задачу</a>
+        <a href="#order" class="btn btn-outline">Передать Джарвису</a>
       </div>
     </section>
 
     <section class="grid">
       <div class="card">
-        <h2>Старт после оплаты</h2>
-        <p>Запускаем реализацию только после оплаты — фиксируем магазин, заказ, сумму и детали отработки.</p>
+        <h2>Карточки товаров</h2>
+        <p>Заголовки, смыслы, характеристики, описания и структура визуала под требования маркетплейса после оплаты.</p>
       </div>
       <div class="card">
-        <h2>Маршрут в WhatsApp</h2>
-        <p>Сразу открываем WhatsApp на 77000338978 с готовым сообщением по оплаченному заказу селлера.</p>
+        <h2>Reels и Shorts</h2>
+        <p>Короткие вертикальные ролики под продвижение товара: цепляющий старт, сценарии, подача и ТЗ на монтаж/генерацию.</p>
       </div>
       <div class="card">
-        <h2>Подготовка для локального Джарвиса</h2>
-        <p>Автоматически копируем текст в буфер обмена и сохраняем файл заявки для быстрой передачи локальному Джарвису.</p>
+        <h2>Маршрут в WhatsApp и Джарвис</h2>
+        <p>Открываем чат с 77000338978, копируем задачу в буфер обмена и сохраняем order-jarvis.txt для локального Джарвиса.</p>
       </div>
     </section>
 
     <section id="order" class="cta-box">
-      <h2>Карточка оплаченного заказа селлера</h2>
-      <p>Заполните данные заказа — текст скопируется в буфер обмена, сохранится в файл для Джарвиса и отправится по выбранному маршруту.</p>
+      <h2>Заказ контента селлера (после оплаты)</h2>
+      <p>Выберите формат задачи и заполните вводные — текст скопируется в буфер, сохранится в файл для Джарвиса и уйдёт по маршруту.</p>
       <form id="seller-form">
-        <input type="text" id="seller-name" placeholder="Селлер / название магазина / контакт" required>
-        <input type="text" id="mp-order" placeholder="Маркетплейс и номер заказа (например, Kaspi / WB №...)" required>
-        <input type="text" id="paid-amount" placeholder="Сумма и статус оплаты (например, оплачено)" required>
+        <input type="text" id="seller-name" placeholder="Селлер / магазин / контакт" required>
+        <input type="text" id="mp-order" placeholder="Маркетплейс и товар (например, Kaspi · Термос 1 л)" required>
+        <select id="content-type">
+          <option value="Карточка товара">Формат: Карточка товара</option>
+          <option value="Reels / Shorts">Формат: Reels / Shorts</option>
+          <option value="Карточка товара + Reels / Shorts">Формат: Карточка товара + Reels / Shorts</option>
+        </select>
+        <input type="text" id="paid-amount" placeholder="Сумма и статус оплаты (например, 25 000 ₸ · оплачено)" required>
         <select id="route-target">
           <option value="both">Маршрут: WhatsApp + локальный Джарвис</option>
           <option value="whatsapp">Маршрут: только WhatsApp</option>
           <option value="jarvis">Маршрут: только локальный Джарвис</option>
         </select>
-        <textarea id="order-details" rows="3" placeholder="Товары, количество, адрес/логистика, особые условия реализации..." required></textarea>
+        <textarea id="order-details" rows="3" placeholder="Задача для Джарвиса: смыслы карточки, сценарий/хуки для Reels или Shorts, акценты на товаре..." required></textarea>
         <div class="form-buttons">
           <button type="submit" class="btn">Отправить по маршруту</button>
           <button type="button" id="copy-only-btn" class="btn btn-outline">Копировать для Джарвиса</button>
@@ -96,7 +101,7 @@
   </main>
 
   <footer>
-    <div class="container">© 2026 humancode000-hash · Реализация заказов селлеров</div>
+    <div class="container">© 2026 AI Content Lab · Контент для селлеров после оплаты</div>
   </footer>
 
   <script>
@@ -105,17 +110,19 @@
     function buildOrderText() {
       const seller = document.getElementById("seller-name").value.trim() || "—";
       const orderId = document.getElementById("mp-order").value.trim() || "—";
+      const contentType = document.getElementById("content-type").value;
       const paid = document.getElementById("paid-amount").value.trim() || "—";
       const details = document.getElementById("order-details").value.trim() || "—";
       const timestamp = new Date().toLocaleString("ru-RU");
 
       return (
-        `ЗАКАЗ СЕЛЛЕРА (ПОСЛЕ ОПЛАТЫ)\n` +
+        `AI CONTENT LAB — ЗАКАЗ КОНТЕНТА (ПОСЛЕ ОПЛАТЫ)\n` +
         `Время: ${timestamp}\n` +
+        `Формат: ${contentType}\n` +
         `Селлер/контакт: ${seller}\n` +
-        `Маркетплейс и заказ: ${orderId}\n` +
+        `Маркетплейс и товар: ${orderId}\n` +
         `Оплата: ${paid}\n` +
-        `Детали реализации: ${details}`
+        `Задача на реализацию: ${details}`
       );
     }
 
@@ -152,7 +159,7 @@
       const text = buildOrderText();
       copyText(text);
       document.getElementById("route-status").textContent =
-        "Карточка заказа скопирована в буфер обмена — вставьте её (Ctrl+V / Cmd+V) локальному Джарвису.";
+        "Задача скопирована в буфер обмена — вставьте её (Ctrl+V / Cmd+V) локальному Джарвису.";
     });
 
     document.getElementById("download-txt-btn").addEventListener("click", function() {
@@ -174,10 +181,10 @@
 
       if (target === "whatsapp") {
         window.open(waUrl, "_blank");
-        statusEl.textContent = "Открыт WhatsApp (77000338978) с карточкой заказа. Текст также скопирован в буфер обмена.";
+        statusEl.textContent = "Открыт WhatsApp (77000338978) с задачей. Текст также скопирован в буфер обмена.";
       } else if (target === "jarvis") {
         downloadOrderFile(plainText);
-        statusEl.textContent = "Текст скопирован в буфер обмена и сохранён файл order-jarvis.txt для локального Джарвиса.";
+        statusEl.textContent = "Текст скопирован в буфер и сохранён файл order-jarvis.txt для локального Джарвиса.";
       } else {
         downloadOrderFile(plainText);
         window.open(waUrl, "_blank");
